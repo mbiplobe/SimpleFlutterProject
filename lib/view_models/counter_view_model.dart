@@ -7,12 +7,12 @@ class UserViewModel extends ChangeNotifier
     List<User> get users => _userList;
     
 
-    void addListItem(int id, String name,String email) {
-        _userList.add(User(id: id, name: name, email: email));
+    void addListItem(User user) {
+        _userList.add(user);
         notifyListeners();
     }
 
-    void deleteItem(int id)
+    void deleteItem(String id)
     {
         _userList.removeWhere((user)=> user.id == id);
         notifyListeners();
